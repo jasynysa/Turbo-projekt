@@ -21,10 +21,10 @@
     <ClInclude Include="targetver.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Centrownica\ConsoleApplication1\Transformacja.h">
+    <ClInclude Include="Kamera.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="Kamera.h">
+    <ClInclude Include="Transformacja.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

@@ -134,4 +134,24 @@ namespace tran
 		return macierzPerspektywy;
 	}
 
+	///perspektywa ukoœna
+	//zakladam ze rzultnia jest o proporcjach 1:1
+	glm::mat4 perspektywaUkosna(glm::fvec3 pozycja, float pierwszyPlan, float drugiPlan)
+	{
+		//uzyskiwanie odleglosci od rzutni
+		float odlegloscRzutni = pozycja.z;
+		glm::mat4 macierzPrzesuniecia(1);
+		glm::mat4 macierzPerspektywy;
+
+		//najpierw przesuniecie kamery o wektor
+		macierzPrzesuniecia[3] = glm::fvec4(-pozycja, 1);
+		//wypelnianie macierzy
+		macierzPerspektywy[0] = glm::fvec4(odlegloscRzutni, 0, 0, 0);
+		macierzPerspektywy[1] = glm::fvec4(0, odlegloscRzutni, 0, 0);
+		macierzPerspektywy[2] = glm::fvec4(pozycja.x, pozycja.y, (-pierwszyPlan - drugiPlan) / (pierwszyPlan - drugiPlan), 1);
+		macierzPerspektywy[3] = glm::fvec4(0, 0, (2 * pierwszyPlan*drugiPlan) / (pierwszyPlan - drugiPlan), 0);
+
+		return macierzPerspektywy = macierzPerspektywy * macierzPrzesuniecia;
+	}
+
 }

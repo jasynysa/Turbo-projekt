@@ -156,10 +156,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Centrownica\ConsoleApplication1\Transformacja.h" />
     <ClInclude Include="Kamera.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Transformacja.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kamera.cpp" />
