@@ -136,13 +136,14 @@ namespace tran
 
 	///perspektywa ukoœna
 	//zakladam ze rzultnia jest o proporcjach 1:1
-	glm::mat4 perspektywaUkosna(glm::fvec3 pozycja, float pierwszyPlan, float drugiPlan)
+	glm::mat4 perspektywaUkosna(glm::fvec3 pozycja, float drugiPlan)
 	{
 		//uzyskiwanie odleglosci od rzutni
 		float odlegloscRzutni = pozycja.z;
+		float pierwszyPlan = odlegloscRzutni;//rzutnia jest pierwszym palanem
 		glm::mat4 macierzPrzesuniecia(1);
 		glm::mat4 macierzPerspektywy;
-
+		pozycja.z = -pozycja.z;
 		//najpierw przesuniecie kamery o wektor
 		macierzPrzesuniecia[3] = glm::fvec4(-pozycja, 1);
 		//wypelnianie macierzy
